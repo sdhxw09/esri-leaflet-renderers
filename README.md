@@ -22,11 +22,11 @@ You can also find a side by side comparison of the ArcGIS API for JavaScript [he
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
     <!-- Load Esri Leaflet from CDN -->
-    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.4/esri-leaflet.js"></script>
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.6/esri-leaflet.js"></script>
 
     <!-- Load Esri Leaflet Renderers -->
     <!-- This will hook into Esri Leaflet and draw the predefined Portland Heritage Tree symbols -->
-    <script src="https://dl.dropboxusercontent.com/u/59331579/0.7.3/esri-leaflet-renderers-0.0.1-beta.1.min.js"></script>
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-renderers/v0.0.1-beta.2/esri-leaflet-renderers.js"></script>
 
     <style>
       body {margin:0;padding:0;}
@@ -58,13 +58,18 @@ Make sure you have the [Grunt CLI](http://gruntjs.com/getting-started) installed
 5. run `grunt` from the command line. This will create minified source, run linting, and start watching the source files for changes.
 6. Make your changes and create a [pull request](https://help.github.com/articles/creating-a-pull-request)
 
+### Limitations
+* [Simple Marker](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#GUID-C8D40B32-5F4B-45EB-8048-6D5A8763E13B) symbols do not support rotation (ie: the 'angle' property is ignored).
+* Polygons only support [solid fill](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#GUID-517D9B3F-DF13-4E79-9B58-A0D24C5E4994).  This does not include advanced fill types like PictureFill, Backward Diagonal, DiagonalCross, etc.
+* [Text](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#ESRI_SECTION1_94E8CE0A9F614ABC8BEDDBCB0E9DC53A) symbols are not supported.
+
 ### Dependencies
 
 * [Leaflet](http://leaflet.com) version 0.7 or higher is required but the latest version is recommended.
 * [Esri Leaflet](https://github.com/Esri/esri-leaflet) - for Esri feature services
 
 ### Licensing
-Copyright 2014 Esri
+Copyright 2015 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
