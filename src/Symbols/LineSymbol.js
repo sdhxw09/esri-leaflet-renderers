@@ -13,6 +13,10 @@ EsriLeafletRenderers.LineSymbol = EsriLeafletRenderers.Symbol.extend({
     this._styles.lineCap = 'butt';
     this._styles.lineJoin = 'miter';
     this._styles.fill = false;
+    this._styles.weight = 0;
+    if (this._symbolJson.weight) {
+      this._styles.weight = this._symbolJson.weight;
+    }
 
     if (!this._symbolJson){
       return;
@@ -24,7 +28,7 @@ EsriLeafletRenderers.LineSymbol = EsriLeafletRenderers.Symbol.extend({
     }
 
     if(this._symbolJson.width){
-      this._styles.weight = this.pixelValue(this._symbolJson.width);
+      this._styles.width = this.pixelValue(this._symbolJson.width);
       
       var dashValues = [];
 
